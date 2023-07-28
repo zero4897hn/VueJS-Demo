@@ -15,7 +15,7 @@
         </div>
         <hr />
         <div>
-            Counter from input: {{ counterInput }} <br />
+            2. Counter from input: {{ counterInput }} <br />
             <CounterInput v-model:counter="counterInput" />
         </div>
         <hr />
@@ -42,11 +42,18 @@ export default {
         }
     },
     components: {
-    DisplayCouter,
-    DecreaseCounter,
-    CounterInput,
-    DisplayCounterFromParent
-},
+        DisplayCouter,
+        DecreaseCounter,
+        CounterInput,
+        DisplayCounterFromParent
+    },
+    watch: {
+        counterParentInput: {
+            handler(newValue, oldValue) {
+                console.log(newValue, oldValue)
+            },
+        }
+    },
     methods: {
         ...mapActions([
             'counter/increase',
