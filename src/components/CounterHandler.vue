@@ -58,6 +58,18 @@ export default {
         ...mapActions([
             'counter/increase',
         ])
+    },
+    created() {
+        console.log('Component created');
+        // データ準備やAPIコールなどがここに実装されられる
+    },
+    mounted() {
+        console.log('Component mounted');
+        // 画面表示ができたら実装
+    },
+    updated() {
+        console.log('Component updated');
+        // 画面がアップデートされたら実装
     }
 }
 
